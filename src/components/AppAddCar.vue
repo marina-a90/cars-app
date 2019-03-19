@@ -2,7 +2,7 @@
     <div>
         <h1>Add car</h1>
 
-        <form @submit.prevent="addCar">
+        <form>
             <!-- @submit.prevent="addCar" -->
             <!-- v-model="car.brand" -->
             <div>Brand: <input type="text" v-model="car.brand" placeholder="brand"/></div>
@@ -21,9 +21,10 @@
                 <input v-model="car.engine" type="radio" value="electric">electric<br>
                 <input v-model="car.engine" type="radio" value="hybrid">hybrid<br>
             </div>
-            <div><button type="submit">Add car</button></div>
+            <div><button @click.prevent="addCar">Add car</button></div>
+            <div><button @click.prevent="previewForm">Preview</button></div>
+            <div><button @click.prevent="resetForm">Reset</button></div>
         </form>
-        <div><button @click="resetForm">Reset</button></div>
     </div>
 </template>
 
@@ -81,6 +82,17 @@ export default {
       //     engine: "",
       //     numberOfDoors: 0
       //   };
+    },
+
+    previewForm() {
+      alert(`
+      Brand: ${this.car.brand},
+      Model: ${this.car.model},
+      Year: ${this.car.year},
+      Max speed: ${this.car.maxSpeed},
+      Automatic: ${this.car.isAutomatic},
+      Engine: ${this.car.engine},
+      Number of doors: ${this.car.numberOfDoors}`);
     }
   }
 };
