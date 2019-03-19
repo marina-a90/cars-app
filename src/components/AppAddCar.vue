@@ -23,6 +23,7 @@
             </div>
             <div><button type="submit">Add car</button></div>
         </form>
+        <div><button @click="resetForm">Reset</button></div>
     </div>
 </template>
 
@@ -60,6 +61,26 @@ export default {
     addCar() {
       carsService.addNewCar(this.car);
       this.$router.push("/cars");
+    },
+    resetForm() {
+      this.car.brand = "";
+      this.car.model = "";
+      this.car.year = 0;
+      this.car.maxSpeed = 0;
+      this.car.isAutomatic = false;
+      this.car.engine = "";
+      this.car.numberOfDoors = 0;
+
+      //   this.car = {
+      //     ...this.car,
+      //     brand: "",
+      //     model: "",
+      //     year: 0,
+      //     maxSpeed: 0,
+      //     isAutomatic: false,
+      //     engine: "",
+      //     numberOfDoors: 0
+      //   };
     }
   }
 };
