@@ -6,11 +6,17 @@
 
             <b-collapse is-nav id="nav_collapse">
                 <b-navbar-nav>
-                    <b-nav-item href="#">
+                    <b-nav-item>
                             <router-link to="/cars">
                                 Cars
                             </router-link>
-                        </b-nav-item>
+                    </b-nav-item>
+
+                    <b-nav-item>
+                            <router-link to="/cars/add">
+                                Add car
+                            </router-link>
+                    </b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>

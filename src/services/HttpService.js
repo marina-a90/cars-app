@@ -9,7 +9,7 @@ class HttpService {
     return http.get(url);
   }
 
-  post(ulr, body) {
+  post(url, body) {
     return http.post(url, body);
   }
 }
