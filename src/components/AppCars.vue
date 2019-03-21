@@ -10,6 +10,8 @@
             <div>Engine: {{ car.engine }}</div>
             <div>Number of doors: {{ car.numberOfDoors }}</div>
             <div><button><router-link :to="`/edit/${car.id}`">Edit</router-link></button></div>
+            <div>
+              <button @click="deleteCar(car)">Delete</button></div>
             <hr>
         </div>
     </div>
@@ -46,6 +48,12 @@ export default {
   //       });
   //   }
 
+  methods: {
+    deleteCar(car){
+      this.cars = this.cars.filter(c => c !== car);
+      carsService.delete(this.cars);
+    }
+  }
 
 };
 </script>

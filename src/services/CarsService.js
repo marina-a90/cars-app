@@ -16,6 +16,11 @@ class CarsService {
   edit (car) {
     return httpService.edit(`/api/cars/${car.id}`, car)
   }
+
+  delete (car) {
+    return httpService.delete(`/api/cars/${car.id}`)
+  }
+
 }
 
 export const carsService = new CarsService();

@@ -21,6 +21,9 @@ class HttpService {
     return http.put(url, body)
   }
 
+  delete (url, body) {
+    return http.delete(url, body)
+  }
 }
 
 export const httpService = new HttpService();
