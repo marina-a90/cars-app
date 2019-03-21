@@ -12,6 +12,15 @@ class HttpService {
   post(url, body) {
     return http.post(url, body);
   }
+
+  // getID (id, url) {
+  //   return http.get(url)
+  // }
+  
+  edit (url, body) {
+    return http.put(url, body)
+  }
+
 }
 
 export const httpService = new HttpService();

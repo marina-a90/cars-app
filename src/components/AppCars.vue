@@ -9,6 +9,8 @@
             <div>Automatic: {{ car.isAutomatic }}</div>
             <div>Engine: {{ car.engine }}</div>
             <div>Number of doors: {{ car.numberOfDoors }}</div>
+            <div><button><router-link :to="`/edit/${car.id}`">Edit</router-link></button></div>
+            <hr>
         </div>
     </div>
 </template>
@@ -27,11 +29,10 @@ export default {
     try {
       const { data } = await carsService.getAllCars();
       this.cars = data;
-      console.log(data);
     } catch (error) {
       console.log(error);
     }
-  }
+  },
 
   //   created() {
   //     carsService
@@ -44,6 +45,8 @@ export default {
   //         console.log(e);
   //       });
   //   }
+
+
 };
 </script>
 
